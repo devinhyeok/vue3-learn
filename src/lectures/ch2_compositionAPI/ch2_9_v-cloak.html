@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="/favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://unpkg.com/vue@next"></script>
+  <title>Vite App</title>
+  <!--컴포넌트가 비활성화 되있으면 앱 숨기기-->
+  <style>
+    [v-cloak] {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <!--컴포넌트가 준비될 때까지 대기-->
+    <p v-cloak>{{message}}</p>
+  </div>
+  <script>
+    const App = {
+      data() {
+        return {
+          message: '안녕하세요'
+        }
+      }
+    }
+    // 3초뒤에 앱 로딩
+    setTimeout(() => {
+      Vue.createApp(App).mount('#app')
+    }, 3000)
+  </script>
+</body>
+
+</html>
